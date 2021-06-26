@@ -1,0 +1,19 @@
+$sizes: ("md":767px, "lg":1023px, "xl":1279px);
+@mixin media($minmax, $media) {
+	@each $size, $resolution in $sizes {
+	  @if $media == $size {
+		@media(#{$minmax}-width: $resolution) {
+		  @content;
+		}
+	  }
+	}
+  }
+// @include media("max", "xl"){
+// 	.products-slider{
+// 		width: 880px;
+// 	}
+// 	.products-slider .slider-wrapper{
+// 		margin-left: 10px;
+// 		margin-right: 10px;
+// 	}
+// }
